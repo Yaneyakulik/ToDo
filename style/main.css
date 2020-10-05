@@ -1,0 +1,29 @@
+.box {
+    width: 400px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    background-color: coral;
+}
+
+.light-theme {
+    background-color: aqua;
+}
+
+.dark-theme {
+    background-color: black;
+    color: blueviolet;
+    
+} 
+
+.themeButton {
+    border: 1px solid black;
+    border-start-end-radius: 25%;
+}
+
+.ul {
+    list-style-type: none;
+}
