@@ -52,19 +52,32 @@
             enter.textContent = "Добавлено";
             var ull = document.createElement("li");
             ull.innerHTML = addTarget;
-            document.querySelector(".ul").appendChild(ull);
+            document.querySelector(".ul").appendChild(ull);  
             
          }
+         let button = document.createElement("button");
+            button.innerHTML = "delete";
+            ull.appendChild(button);
+            button.addEventListener('click',function(){
+              this.parentNode.remove();
+              });
     }
+
+    // button.addEventListener('click',function(){
+    //   this.parentNode.remove();
+    //   });
+
+
+    
+
+    // let deleteTarget = document.getElementById("deleteTarget");
+         
 
      
 
-        // deleteButton.onclick = function() {
-        //     var del = document.querySelector(".ul");
-        //     var dell = document.("li")
-            
-        //     document.querySelector(".ul").lastChild(dell);
-        // }
+    //     deleteButton.onclick = function() {
+          
+    //     }
         
 
       
