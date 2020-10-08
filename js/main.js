@@ -53,7 +53,7 @@
               function changeText() {
                 enter.textContent="Введите задачу";
               }
-                setTimeout(fun, 1000) 
+               setTimeout(changeText, 1000); 
             var ull = document.createElement("li");
             ull.innerHTML = addTarget;
             document.querySelector(".ul").appendChild(ull);   
