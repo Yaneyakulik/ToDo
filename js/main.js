@@ -50,10 +50,14 @@
         var addTarget = document.getElementById("target").value;
           if (addTarget) {
             enter.textContent = "Добавлено";
+              function changeText() {
+                enter.textContent="Введите задачу";
+              }
+                setTimeout(fun, 1000) 
             var ull = document.createElement("li");
             ull.innerHTML = addTarget;
-            document.querySelector(".ul").appendChild(ull);  
-            
+            document.querySelector(".ul").appendChild(ull);   
+            var defaultInput = document.getElementById("target").value = ""; 
          }
          let button = document.createElement("button");
             button.innerHTML = "delete";
