@@ -84,7 +84,7 @@ let completed = document.querySelector(ull);
   }
   
   zamik();
-  qewqweq
+  qewqweqqwr qwet egdf hdfg h df 
 
     
     
