@@ -26,4 +26,19 @@
 
 .ul {
     list-style-type: none;
+    cursor: pointer;
+}
+ 
+#sosi {
+    width: 20px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    cursor: pointer;
+}
+
+.green-text {
+    color: lime;
+    text-decoration: line-through;
 }
