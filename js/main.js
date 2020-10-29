@@ -47,42 +47,43 @@ var qwe = document.querySelector(".ul");
 // let ull;
 
 
-  // function filter(){
-    // let ull;
+function filter(){
+  let newLiElement;
 
-acceptButton.onclick = function() {
-  var addTarget = document.getElementById("target").value;
-  if (addTarget) {
-    textInput.textContent = "Добавлено";
-    function changeText() {
-      textInput.textContent="Введите задачу";
+  acceptButton.onclick = function() {
+    var addTarget = document.getElementById("target").value;
+    if (addTarget) {
+      textInput.textContent = "Добавлено";
+      function changeText() {
+        textInput.textContent="Введите задачу";
+      }
+      setTimeout(changeText, 1000); 
+      newLiElement = document.createElement("li");
+      newLiElement.innerHTML = addTarget;
+      document.querySelector(".ul").appendChild(newLiElement);   
+      var defaultInput = document.getElementById("target").value = "";
+      newLiElement.onclick = function() {
+        newLiElement.classList.toggle("green-text")
+  
+        // ull.style.setProperty("color", "green");
+        // ull.style.textDecoration = "line-through";
+        //    ull.onclick = function() {
+        //     ull.style.setProperty("color", "black");
+        //     ull.style.textDecoration = "none";
+        //   }
+      }
+      let button = document.createElement("button");
+      button.innerHTML = "delete";
+      newLiElement.appendChild(button);
+        // document.getElementById("dynamicButton").style.setProperty("background-color", "black");
+        // dynamicButton.style.setProperty("color", "white");
+      button.addEventListener('click',function(){
+        this.parentNode.remove();
+      });
     }
-    setTimeout(changeText, 1000); 
-    var newLiElement = document.createElement("li");
-    newLiElement.innerHTML = addTarget;
-    document.querySelector(".ul").appendChild(newLiElement);   
-    var defaultInput = document.getElementById("target").value = "";
   }
-  newLiElement.onclick = function() {
-    newLiElement.classList.toggle("green-text")
-
-    // ull.style.setProperty("color", "green");
-    // ull.style.textDecoration = "line-through";
-    //    ull.onclick = function() {
-    //     ull.style.setProperty("color", "black");
-    //     ull.style.textDecoration = "none";
-    //   }
-  }
-  let button = document.createElement("button");
-  button.innerHTML = "delete";
-  newLiElement.appendChild(button);
-    // document.getElementById("dynamicButton").style.setProperty("background-color", "black");
-    // dynamicButton.style.setProperty("color", "white");
-  button.addEventListener('click',function(){
-    this.parentNode.remove();
-  });
 }
-  // }
+filter();
 
  
  
