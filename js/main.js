@@ -35,22 +35,25 @@ let themeButton = document.querySelector(".themeButton");
 themeButton.onclick = function() {
     page.classList.toggle("light-theme");
       page.classList.toggle("dark-theme");
-  }
+}
 
   
   
 
 let textInput = document.getElementById("enterTarget");
-let acceptButton = document.getElementById("acceptButton");
+let addToDo = document.getElementById("acceptButton");
 let deleteButton = document.getElementById("deleteButton");
 var qwe = document.querySelector(".ul");
-// let ull;
+
+let all = document.querySelector(".all");
+let active = document.querySelector(".active");
+let completed = document.querySelector(".completed");
 
 
 function filter(){
   let newLiElement;
 
-  acceptButton.onclick = function() {
+  addToDo.onclick = function() {
     var addTarget = document.getElementById("target").value;
     if (addTarget) {
       textInput.textContent = "Добавлено";
@@ -59,11 +62,13 @@ function filter(){
       }
       setTimeout(changeText, 1000); 
       newLiElement = document.createElement("li");
+      newLiElement.className = "to-do";
       newLiElement.innerHTML = addTarget;
       document.querySelector(".ul").appendChild(newLiElement);   
       var defaultInput = document.getElementById("target").value = "";
+      arr.push(newLiElement);
       newLiElement.onclick = function() {
-        newLiElement.classList.toggle("green-text")
+        this.classList.toggle("green-text")
   
         // ull.style.setProperty("color", "green");
         // ull.style.textDecoration = "line-through";
@@ -75,22 +80,30 @@ function filter(){
       let button = document.createElement("button");
       button.innerHTML = "delete";
       newLiElement.appendChild(button);
-        // document.getElementById("dynamicButton").style.setProperty("background-color", "black");
-        // dynamicButton.style.setProperty("color", "white");
       button.addEventListener('click',function(){
         this.parentNode.remove();
       });
+    } 
+    console.log(arr);
+
+    completed.onclick = function() {
+      if (newLiElement.classList.contains("green-text")) {
+        newLiElement.hidden = true;
+      }
     }
   }
+  var arr = [];
+
+  // completed.onclick = function() {
+  //   if (newLiElement.classList.contains("green-text")) {
+  //     newLiElement.hidden = true;
+  //   }
+  // }
 }
+
 filter();
 
+
+
  
  
-
-const all = document.getElementById("all");
-const active = document.getElementById("active");
-const completed = document.getElementById("completed");
-    
-    
-
