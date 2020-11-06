@@ -1,6 +1,6 @@
 .box {
     width: 400px;
-    height: 700px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid black;
@@ -8,6 +8,17 @@
     vertical-align: middle;
     background-color: coral;
 }
+
+/* .box-dark {
+    width: 400px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(123, 14, 212);
+} */
 
 .light-theme {
     background-color: aqua;
@@ -42,3 +53,12 @@
     color: lime;
     text-decoration: line-through;
 }
+
+.radios {
+    width: 20px;
+    height: 60px;
+    margin-left: 100px;
+    margin-top: 50px;
+    display: flex;
+}
+

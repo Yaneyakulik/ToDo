@@ -31,26 +31,26 @@
 
 let page = document.querySelector(".page");
 let themeButton = document.querySelector(".themeButton");
+let box = document.querySelector(".box");
 
 themeButton.onclick = function() {
     page.classList.toggle("light-theme");
-      page.classList.toggle("dark-theme");
+    page.classList.toggle("dark-theme");
+    // box.classList.toggle("box-dark");
 }
 
   
-  
-
 let textInput = document.getElementById("enterTarget");
 let addToDo = document.getElementById("acceptButton");
 let deleteButton = document.getElementById("deleteButton");
-var qwe = document.querySelector(".ul");
+let ullList = document.querySelector(".ul");
 
 let all = document.querySelector(".all");
 let active = document.querySelector(".active");
 let completed = document.querySelector(".completed");
 
 
-function filter(){
+function filter() {
   let newLiElement;
 
   addToDo.onclick = function() {
@@ -66,9 +66,9 @@ function filter(){
       newLiElement.innerHTML = addTarget;
       document.querySelector(".ul").appendChild(newLiElement);   
       var defaultInput = document.getElementById("target").value = "";
-      arr.push(newLiElement);
+      liElements.push(newLiElement);
       newLiElement.onclick = function() {
-        this.classList.toggle("green-text")
+        this.classList.toggle("green-text");
   
         // ull.style.setProperty("color", "green");
         // ull.style.textDecoration = "line-through";
@@ -84,24 +84,61 @@ function filter(){
         this.parentNode.remove();
       });
     } 
-    console.log(arr);
-
-    completed.onclick = function() {
-      if (newLiElement.classList.contains("green-text")) {
-        newLiElement.hidden = true;
-      }
-    }
+    console.log(liElements);
   }
-  var arr = [];
-
-  // completed.onclick = function() {
-  //   if (newLiElement.classList.contains("green-text")) {
-  //     newLiElement.hidden = true;
-  //   }
-  // }
+  active.onclick = function() {
+    hideBlackTodos(liElements);
+  }
+  completed.onclick = function() {
+    hideGreenTodos(liElements);
+  }
+  all.onclick = function() {
+    showAllTodos(liElements);
+  }
 }
 
+  var liElements = [];
+
+
 filter();
+
+function hideGreenTodos(liElements) {
+  for (var i = 0; i < liElements.length; i++) {
+    if (!liElements[i].classList.contains("green-text")) {
+      liElements[i].hidden = true;
+    } else {
+      liElements[i].hidden = false;
+    }
+  }
+}
+
+function hideBlackTodos(liElements) {
+  for (var i = 0; i < liElements.length; i++) {
+    if (liElements[i].classList.contains("green-text")) {
+      liElements[i].hidden = true;
+    } else {
+      liElements[i].hidden = false;
+    }
+  }
+}
+
+function showAllTodos(liElements) {
+  for (var i = 0; i < liElements.length; i++) {
+    if (liElements[i].hidden = true) {
+      liElements[i].hidden = false;
+    }
+  }
+}
+
+
+// function hideBlackTodos(liElements) {
+//   for(var i = 0; i < liElements.length; i++) {
+//     if(liElements[i].classlist.contains("green-text")) {
+//       liElements[i].hidden = false;
+//     }
+//   }
+// }
+
 
 
 
