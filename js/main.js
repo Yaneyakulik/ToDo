@@ -1,42 +1,11 @@
-// const zalupa = num => {
-//     for( var i = 1; i <= num; i++) {
-//         if (i % 3===0 && i % 5 === 0) {
-//             console.log("FizzBuzz")
-//         } else if (i % 3===0) {
-//             console.log('fizz')
-//         } else if (i % 5===0) {
-//             console.log("buzz")
-//         } else {
-//             console.log(i)
-//         }
-//     }
-// }
-
-
-// for (let n = 1; n <= 100; n++) {
-//     let output = "";
-//     if (n % 3 == 0) output += "Fizz";
-//     if (n % 5 == 0) output += "Buzz";
-//     console.log(output || n);
-//   }
-
-
-//   for(i = 1; i <=7; i++) {
-//       let count = "";
-//       if(i.length <7) count += "#";
-
-//       console.log(count.length)
-//   }
-
-
 let page = document.querySelector(".page");
 let themeButton = document.querySelector(".themeButton");
 let box = document.querySelector(".box");
 
 themeButton.onclick = function() {
-    page.classList.toggle("light-theme");
-    page.classList.toggle("dark-theme");
-    // box.classList.toggle("box-dark");
+  page.classList.toggle("light-theme");
+  page.classList.toggle("dark-theme");
+  // box.classList.toggle("box-dark");
 }
 
   
@@ -67,15 +36,9 @@ function filter() {
       document.querySelector(".ul").appendChild(newLiElement);   
       var defaultInput = document.getElementById("target").value = "";
       liElements.push(newLiElement);
+      localStorage.setItem("li", JSON.stringify(liElements));
       newLiElement.onclick = function() {
         this.classList.toggle("green-text");
-  
-        // ull.style.setProperty("color", "green");
-        // ull.style.textDecoration = "line-through";
-        //    ull.onclick = function() {
-        //     ull.style.setProperty("color", "black");
-        //     ull.style.textDecoration = "none";
-        //   }
       }
       let button = document.createElement("button");
       button.innerHTML = "delete";
@@ -85,6 +48,7 @@ function filter() {
       });
     } 
     console.log(liElements);
+    console.log(typeof liElements);
   }
   active.onclick = function() {
     hideBlackTodos(liElements);
@@ -96,9 +60,8 @@ function filter() {
     showAllTodos(liElements);
   }
 }
-
-  var liElements = [];
-
+var liElements = [];
+localStorage.setItem("liElements", JSON.stringify(liElements));
 
 filter();
 
@@ -130,14 +93,12 @@ function showAllTodos(liElements) {
   }
 }
 
-
-// function hideBlackTodos(liElements) {
-//   for(var i = 0; i < liElements.length; i++) {
-//     if(liElements[i].classlist.contains("green-text")) {
-//       liElements[i].hidden = false;
-//     }
-//   }
-// }
+function addInLocalStorage(liElements) {
+  for (var i = 0; i < liElements.length; i++) {
+    localStorage.setItem("hui", JSON.stringify(liElements[i]));
+    liElements = JSON.parse(localStorage.getItem("array"));
+  }
+}
 
 
 
